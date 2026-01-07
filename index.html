@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <link href="./output.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>TO-DO-LIST</title>
+</head>
+<body>
+    <div class="flex flex-col gap-12 w-96 mt-12 mx-auto">
+        <h1 class="title text-2xl font-semibold">To Do List</h1>
+
+        <div class="flex gap-2 items-center">
+            <input type="text" id="input"
+                placeholder="Digite uma nova tarefa"
+                class="btn bg-neutral-300 w-full border-none rounded-xl p-2 outline-none">
+            <button class="bg-neutral-800 text-neutral-300 border-none rounded-[50%] p-2.5 cursor-pointer hover:bg-neutral-800 flex-wrap" id="btn" onclick="newTask()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="text-neutral-200 text-xl w-full">
+            <ul id="list" class="list flex flex-col gap-8"></ul>
+        </div>
+    </div>
+</body>
+</html>

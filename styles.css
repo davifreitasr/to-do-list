@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+    --background: #111;
+    --text: #ededed;
+    --border: #222;
+    --btn-check: #0c3f29;
+    --hover-tasks: #222;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato';
+    background: var(--background);
+}
+
+.title {
+    color: var(--text);
+}
+
+.list li {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    text-transform: capitalize;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: .5rem;
+    transition: transform 200ms ease-in-out, background 200ms ease-in-out;
+    user-select: none;
+}
+
+.btn-check i {
+    background-color: var(--btn-check);
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.list li:hover {
+    background: var(--hover-tasks);
+    transform: translateY(-5px);
+}
