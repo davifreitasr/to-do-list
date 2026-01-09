@@ -1,4 +1,17 @@
-const localStorageKey = 'to-do-list-tasks'
+const localStorageKey = 'to-do-list-tasks' // Chave para salvar as tarefas no localStorage
+const html = document.documentElement
+const theme = document.getElementById('theme')
+
+if (localStorage.theme === 'light') {
+    html.classList.add('light')
+}
+
+theme.addEventListener('click', () => {    
+    html.classList.toggle('light')
+
+    localStorage.theme = html.classList.contains('light') ? 'light' : 'dark'
+})
+
 
 function validateIfTaskExists(data) {
     let values     = JSON.parse(localStorage.getItem(localStorageKey) || '[]')
@@ -39,9 +52,10 @@ function showTasks() {
 function taskCheck(data) {
     let values = JSON.parse(localStorage.getItem(localStorageKey) || '[]')
     let index = values.findIndex(x => x.name == data)
-    values.splice(index,1)
-    localStorage.setItem(localStorageKey, JSON.stringify(values))
 
+    values.splice(index, 1)
+
+    localStorage.setItem(localStorageKey, JSON.stringify(values))
     showTasks()
 }
 

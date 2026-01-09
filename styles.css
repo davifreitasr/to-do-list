@@ -3,9 +3,11 @@
 :root {
     --background: #111;
     --text: #ededed;
+    --icon-theme: #f9f9f9;
     --border: #222;
     --btn-check: #0c3f29;
     --hover-tasks: #222;
+    --white: #fff
 }
 
 * {
@@ -13,8 +15,22 @@
 }
 
 body {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     background: var(--background);
+    transition: background 300ms ease-in-out;
+}
+
+.light {
+    --background: #ededed;
+    --text: #111;
+    --icon-theme: #1a1616;
+    --border: #222;
+    --btn-check: #0c3f29;
+    --hover-tasks: #ededed;
+}
+
+.icon {
+    color: var(--icon-theme);
 }
 
 .title {
@@ -26,6 +42,7 @@ body {
     justify-content: space-between;
     justify-items: center;
     text-transform: capitalize;
+    color: var(--text);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: .5rem;
@@ -35,6 +52,7 @@ body {
 
 .btn-check i {
     background-color: var(--btn-check);
+    color: var(--white);
     padding: 5px;
     border: none;
     border-radius: 50%;
@@ -42,6 +60,6 @@ body {
 }
 
 .list li:hover {
-    background: var(--hover-tasks);
+    background: var(--hover-tasks);     
     transform: translateY(-5px);
 }

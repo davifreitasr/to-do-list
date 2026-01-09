@@ -7,8 +7,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-neutral-50: oklch(98.5% 0 0);
     --color-neutral-200: oklch(92.2% 0 0);
     --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-700: oklch(37.1% 0 0);
     --color-neutral-800: oklch(26.9% 0 0);
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
@@ -172,6 +174,18 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
+  .top-2\.5 {
+    top: calc(var(--spacing) * 2.5);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -186,9 +200,6 @@
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
-  }
-  .w-96 {
-    width: calc(var(--spacing) * 96);
   }
   .w-full {
     width: 100%;
@@ -264,6 +275,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-neutral-50 {
+    color: var(--color-neutral-50);
+  }
   .text-neutral-200 {
     color: var(--color-neutral-200);
   }
@@ -286,10 +300,10 @@
     --tw-outline-style: none;
     outline-style: none;
   }
-  .hover\:bg-neutral-800 {
+  .hover\:bg-neutral-700 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-neutral-800);
+        background-color: var(--color-neutral-700);
       }
     }
   }
@@ -302,16 +316,30 @@
 :root {
   --background: #111;
   --text: #ededed;
+  --icon-theme: #f9f9f9;
   --border: #222;
   --btn-check: #0c3f29;
   --hover-tasks: #222;
+  --white: #fff;
 }
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   background: var(--background);
+  transition: background 300ms ease-in-out;
+}
+.light {
+  --background: #ededed;
+  --text: #111;
+  --icon-theme: #1a1616;
+  --border: #222;
+  --btn-check: #0c3f29;
+  --hover-tasks: #ededed;
+}
+.icon {
+  color: var(--icon-theme);
 }
 .title {
   color: var(--text);
@@ -321,6 +349,7 @@ body {
   justify-content: space-between;
   justify-items: center;
   text-transform: capitalize;
+  color: var(--text);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: .5rem;
@@ -329,6 +358,7 @@ body {
 }
 .btn-check i {
   background-color: var(--btn-check);
+  color: var(--white);
   padding: 5px;
   border: none;
   border-radius: 50%;
